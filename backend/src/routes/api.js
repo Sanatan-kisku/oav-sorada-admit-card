@@ -30,9 +30,27 @@ function mapRow(row) {
     rollNo: clean(row['ROLL_NO'] || row['Roll']),
     gender: clean(row['GENDER'] || row['Gender']),
     dob: normalizeDob(row['BIRTH_DATE'] || row['Date of Birth']),
-    fatherName: clean(row['FATHER'] || row['Father']),
-    motherName: clean(row['MOTHER'] || row['Mother']),
-    houseName: clean(row['HOUSE_NAME'] || row['House Name'])
+
+    fatherName: clean(
+      row['FATHERS_NAME'] ||
+      row['FATHER_NAME'] ||
+      row['FATHER'] ||
+      row['Father'] ||
+      row['Father Name']
+    ),
+
+    motherName: clean(
+      row['MOTHERS_NAME'] ||
+      row['MOTHER_NAME'] ||
+      row['MOTHER'] ||
+      row['Mother'] ||
+      row['Mother Name']
+    ),
+
+    houseName: clean(
+      row['HOUSE_NAME'] ||
+      row['House Name']
+    )
   };
 }
 
