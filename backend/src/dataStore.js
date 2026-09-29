@@ -22,11 +22,62 @@ export async function getStudents() {
 export async function replaceStudents(records) {
   if (process.env.DEMO_MODE === 'true') {
     await fs.mkdir(dataDir, { recursive: true });
-    await fs.writeFile(studentsFile, JSON.stringify(records, null, 2));
+
+    const existing = await readJson(studentsFile, []);
+
+    const studentMap = new Map();
+
+    for (const student of existing) {
+      const key = [
+        student.className,
+        student.section,
+        student.rollNo,
+        student.dob
+      ].map(v => String(v ?? '').trim().toUpperCase()).join('|');
+
+      studentMap.set(key, student);
+    }
+
+    for (const student of records) {
+      const key = [
+        student.className,
+        student.section,
+        student.rollNo,
+        student.dob
+      ].map(v => String(v ?? '').trim().toUpperCase()).join('|');
+
+      studentMap.set(key, student);
+    }
+
+    const merged = [...studentMap.values()];
+
+    await fs.writeFile(
+      studentsFile,
+      JSON.stringify(merged, null, 2)
+    );
+
     return records.length;
   }
-  await Student.deleteMany({});
-  if (records.length) await Student.insertMany(records, { ordered: false });
+
+  const operations = records.map(student => ({
+    updateOne: {
+      filter: {
+        className: student.className,
+        section: student.section,
+        rollNo: student.rollNo,
+        dob: student.dob
+      },
+      update: {
+        $set: student
+      },
+      upsert: true
+    }
+  }));
+
+  if (operations.length) {
+    await Student.bulkWrite(operations, { ordered: false });
+  }
+
   return records.length;
 }
 
