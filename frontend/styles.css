@@ -1,0 +1,860 @@
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #111;
+  background: #eef2f6;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+/* =========================================================
+   MAIN PORTAL
+   ========================================================= */
+
+.page-shell {
+  max-width: 1050px;
+  margin: auto;
+  padding: 24px 16px;
+}
+
+.search-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 5px 22px #0001;
+}
+
+.portal-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 16px;
+}
+
+.portal-mark {
+  width: 58px;
+  height: 58px;
+  border: 3px solid #1d4f7a;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  color: #1d4f7a;
+}
+
+.portal-school {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.portal-head h1 {
+  font-size: 22px;
+  margin: 4px 0;
+}
+
+.portal-head p {
+  margin: 0;
+  color: #666;
+}
+
+.search-card h2 {
+  margin-bottom: 4px;
+}
+
+.muted {
+  color: #666;
+}
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.grid {
+  display: grid;
+  gap: 12px;
+}
+
+.four {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+label {
+  font-weight: 700;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+input,
+select {
+  padding: 10px;
+  border: 1px solid #bbb;
+  border-radius: 7px;
+  background: #fff;
+}
+
+.primary,
+.secondary {
+  border: 0;
+  border-radius: 7px;
+  padding: 11px 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.primary {
+  background: #164b79;
+  color: #fff;
+}
+
+.secondary {
+  background: #e8eef4;
+  color: #164b79;
+}
+
+form .primary {
+  margin-top: 16px;
+}
+
+.message {
+  margin-top: 12px;
+  padding: 10px;
+  background: #fff1cc;
+  color: #5c4700;
+  border-radius: 6px;
+}
+
+/* =========================================================
+   TOOLBAR
+   ========================================================= */
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 14px 0;
+}
+
+/* =========================================================
+   A4 ADMIT CARD
+   ========================================================= */
+
+.admit-card {
+  width: 210mm;
+  height: 297mm;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid #222;
+  padding: 8mm 9mm;
+  overflow: hidden;
+}
+
+/* =========================================================
+   ADMIT CARD HEADER
+   ========================================================= */
+
+.admit-top {
+  border: 1px solid #222;
+  text-align: center;
+  padding: 0;
+}
+
+.gov {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+}
+
+/* =========================================================
+   SCHOOL LOGO + SCHOOL NAME HEADER
+   ========================================================= */
+
+.school-title-row {
+  display: grid;
+
+  /* Left logo | centered school information | right logo */
+  grid-template-columns: 110px 1fr 110px;
+
+  align-items: center;
+  width: 100%;
+  padding: 5px 15px;
+}
+
+.oav-logo,
+.cbse-logo {
+  width: 82px;
+  height: 82px;
+  object-fit: contain;
+  justify-self: center;
+}
+
+.school-title {
+  text-align: center;
+  min-width: 0;
+}
+
+.school-title h1 {
+  margin: 0;
+  font-size: 21px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.school-title .exam-title {
+  margin-top: 6px;
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.school-title .exam-time {
+  margin-top: 5px;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+/* =========================================================
+   OLD HEADER SUPPORT
+   ========================================================= */
+
+.school-heading h1 {
+  font-size: 19px;
+  margin: 3px 0;
+  font-weight: 900;
+}
+
+.exam-title {
+  font-size: 13px;
+  font-weight: 900;
+  margin-top: 3px;
+}
+
+.exam-time {
+  font-size: 11px;
+  font-weight: 800;
+  margin-top: 4px;
+}
+
+/* =========================================================
+   STUDENT BASIC DETAILS
+   ========================================================= */
+
+.top-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1.45fr;
+  border: 1px solid #222;
+  border-top: 0;
+  font-size: 10.5px;
+  font-weight: 700;
+}
+
+.top-details div {
+  padding: 5px 6px;
+  border-right: 1px solid #222;
+}
+
+.top-details div:last-child {
+  border-right: 0;
+}
+
+/* =========================================================
+   CANDIDATE INFORMATION
+   ========================================================= */
+
+.candidate-block {
+  display: grid;
+  grid-template-columns: 39mm 1fr;
+  border: 1px solid #222;
+  border-top: 0;
+  min-height: 42mm;
+}
+
+.photo-box {
+  border-right: 1px solid #222;
+  min-height: 42mm;
+
+  display: grid;
+  place-items: center;
+
+  text-align: center;
+  font-size: 9px;
+  font-weight: 800;
+  line-height: 1.45;
+
+  padding: 5px;
+}
+
+.candidate-details {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.candidate-details > div {
+  display: grid;
+  grid-template-columns: 36mm 1fr;
+
+  border-bottom: 1px solid #222;
+
+  font-size: 10.5px;
+  align-items: center;
+}
+
+.candidate-details > div:last-child {
+  border-bottom: 0;
+}
+
+.candidate-details span {
+  font-weight: 700;
+  padding: 4px 6px;
+  border-right: 1px solid #222;
+}
+
+.candidate-details strong {
+  padding: 4px 7px;
+}
+
+/* =========================================================
+   EXAMINATION SCHEDULE
+   ========================================================= */
+
+.schedule {
+  margin-top: 8px;
+}
+
+.section-title {
+  border: 1px solid #222;
+  border-bottom: 0;
+
+  text-align: left;
+
+  font-size: 10.5px;
+  font-weight: 900;
+
+  padding: 5px;
+}
+
+.schedule table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 9.5px;
+}
+
+.schedule th,
+.schedule td {
+  border: 1px solid #222;
+  padding: 4px 5px;
+  text-align: center;
+  height: 7.5mm;
+}
+
+.schedule th {
+  font-weight: 900;
+  background: #f3f3f3;
+}
+
+.schedule th:nth-child(1) {
+  width: 24%;
+}
+
+.schedule th:nth-child(2) {
+  width: 20%;
+}
+
+.schedule th:nth-child(3) {
+  width: 56%;
+}
+
+/* =========================================================
+   INSTRUCTIONS
+   ========================================================= */
+
+.instructions {
+  margin-top: 8px;
+  font-size: 8.5px;
+  line-height: 1.25;
+}
+
+.instructions ol {
+  border: 1px solid #222;
+  margin: 0;
+  padding: 5px 22px 5px 25px;
+}
+
+.instructions li {
+  margin: 2px 0;
+}
+
+/* =========================================================
+   CONFIRMATION
+   ========================================================= */
+
+.confirmation {
+  text-align: center;
+  font-size: 8.5px;
+  font-weight: 900;
+  margin-top: 8px;
+}
+
+/* =========================================================
+   SIGNATURE SECTION
+   ========================================================= */
+
+/*
+   Layout:
+
+   Student signature
+   Father/Mother signature
+
+   Examination In-Charge              Principal
+*/
+
+.signatures {
+  width: 100%;
+  margin-top: 8mm;
+  font-size: 9.5px;
+}
+
+/* ---------------------------------------------------------
+   Student + Parent signatures
+   --------------------------------------------------------- */
+
+.student-signatures {
+  display: flex;
+  flex-direction: column;
+
+  gap: 7mm;
+
+  width: 45%;
+}
+
+/* ---------------------------------------------------------
+   Official signatures
+   --------------------------------------------------------- */
+
+.official-signatures {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
+  align-items: flex-end;
+
+  width: 100%;
+
+  margin-top: 8mm;
+}
+
+/* ---------------------------------------------------------
+   Individual signature box
+   --------------------------------------------------------- */
+
+.signature-box {
+  width: 42%;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  line-height: 1.2;
+}
+
+/* ---------------------------------------------------------
+   Signature line
+   --------------------------------------------------------- */
+
+.sign-space {
+  height: 10mm;
+
+  width: 75%;
+
+  border-bottom: 1px solid #111;
+
+  margin: 0 auto 3px auto;
+}
+
+/* =========================================================
+   SITE FOOTER
+   ========================================================= */
+
+.site-footer {
+  display: none;
+}
+
+/* =========================================================
+   MOBILE SCREEN
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .four {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .toolbar {
+    flex-direction: column;
+  }
+
+  .admit-card {
+    transform-origin: top left;
+    transform: scale(0.9);
+
+    margin-bottom: -30mm;
+  }
+
+  .top-details {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .top-details div:nth-child(2) {
+    border-right: 0;
+  }
+
+  .top-details div {
+    border-bottom: 1px solid #222;
+  }
+
+  .candidate-block {
+    grid-template-columns: 32mm 1fr;
+  }
+
+  .school-heading h1 {
+    font-size: 15px;
+  }
+
+  /* Smaller logos on small screens */
+  .school-title-row {
+    grid-template-columns: 65px 1fr 65px;
+    padding: 5px 8px;
+  }
+
+  .oav-logo,
+  .cbse-logo {
+    width: 55px;
+    height: 55px;
+  }
+
+  .school-title h1 {
+    font-size: 15px;
+  }
+
+  .school-title .exam-title {
+    font-size: 11px;
+  }
+
+  .school-title .exam-time {
+    font-size: 10px;
+  }
+
+  /* Keep official signatures side by side */
+  .official-signatures {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .signature-box {
+    width: 44%;
+    font-size: 8.5px;
+  }
+}
+
+/* =========================================================
+   PRINT / DOWNLOAD
+   ========================================================= */
+
+@media print {
+  /* -------------------------------------------------------
+     A4 PAGE
+     ------------------------------------------------------- */
+
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  html,
+  body {
+    width: 210mm;
+    height: 297mm;
+
+    background: #fff !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* -------------------------------------------------------
+     HIDE PORTAL UI
+     ------------------------------------------------------- */
+
+  .no-print {
+    display: none !important;
+  }
+
+  .toolbar,
+  .search-card {
+    display: none !important;
+  }
+
+  /* -------------------------------------------------------
+     PAGE SHELL
+     ------------------------------------------------------- */
+
+  .page-shell {
+    width: 210mm;
+    height: 297mm;
+
+    max-width: none;
+
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* -------------------------------------------------------
+     ADMIT CARD
+     ------------------------------------------------------- */
+
+  .admit-card {
+    display: block !important;
+
+    width: 210mm !important;
+    height: 297mm !important;
+
+    max-width: none !important;
+    min-height: 297mm !important;
+
+    margin: 0 !important;
+
+    border: 0 !important;
+    box-shadow: none !important;
+
+    padding: 8mm 9mm !important;
+
+    overflow: hidden !important;
+
+    page-break-after: avoid !important;
+    page-break-before: avoid !important;
+
+    break-after: avoid-page !important;
+    break-before: avoid-page !important;
+  }
+
+  /* -------------------------------------------------------
+     PREVENT SECTIONS FROM SPLITTING
+     ------------------------------------------------------- */
+
+  .admit-card * {
+    break-inside: avoid;
+  }
+
+  .candidate-block,
+  .schedule,
+  .instructions,
+  .signatures,
+  .official-signatures,
+  .student-signatures {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* -------------------------------------------------------
+     PRINT HEADER
+     ------------------------------------------------------- */
+
+  .school-title-row {
+    display: grid !important;
+
+    grid-template-columns: 115px 1fr 115px !important;
+
+    align-items: center !important;
+
+    width: 100% !important;
+
+    padding: 5px 18px !important;
+  }
+
+  .oav-logo,
+  .cbse-logo {
+    width: 78px !important;
+    height: 78px !important;
+
+    object-fit: contain !important;
+
+    justify-self: center !important;
+  }
+
+  .school-title {
+    text-align: center !important;
+  }
+
+  .school-title h1 {
+    font-size: 20px !important;
+    font-weight: 900 !important;
+  }
+
+  .school-title .exam-title {
+    font-size: 14px !important;
+    font-weight: 900 !important;
+  }
+
+  .school-title .exam-time {
+    font-size: 12px !important;
+    font-weight: 800 !important;
+  }
+
+  /* -------------------------------------------------------
+     PRINT SIGNATURES
+     ------------------------------------------------------- */
+
+  .signatures {
+    width: 100% !important;
+    margin-top: 8mm !important;
+    font-size: 9.5px !important;
+  }
+
+  .student-signatures {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 45% !important;
+  }
+
+  .official-signatures {
+    display: flex !important;
+
+    flex-direction: row !important;
+
+    justify-content: space-between !important;
+    align-items: flex-end !important;
+
+    width: 100% !important;
+
+    margin-top: 8mm !important;
+  }
+
+  .signature-box {
+    width: 42% !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+
+    align-items: center !important;
+
+    text-align: center !important;
+  }
+
+  .sign-space {
+    height: 10mm !important;
+    width: 75% !important;
+
+    border-bottom: 1px solid #111 !important;
+
+    margin: 0 auto 3px auto !important;
+  }
+}
+
+/* =========================================================
+   SIGNATURE SECTION - 2 x 2 GRID
+   ========================================================= */
+
+.signatures {
+  width: 100%;
+  margin-top: 8mm;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+
+  column-gap: 12mm;
+  row-gap: 7mm;
+
+  text-align: center;
+  font-size: 9.5px;
+}
+
+/* Every signature position */
+.signature-box {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+
+  text-align: center;
+}
+
+/* Signature line */
+.sign-space {
+  height: 10mm;
+  width: 75%;
+
+  border-bottom: 1px solid #111;
+
+  margin: 0 auto 3px auto;
+}
+
+/* Make signature text neat */
+.signature-box strong {
+  display: block;
+  line-height: 1.2;
+}
+
+/* =========================================================
+   PRINT
+   ========================================================= */
+
+@media print {
+  .signatures {
+    display: grid !important;
+
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: auto auto !important;
+
+    column-gap: 12mm !important;
+    row-gap: 7mm !important;
+
+    width: 100% !important;
+
+    margin-top: 8mm !important;
+
+    text-align: center !important;
+  }
+
+  .signature-box {
+    width: 100% !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+
+    align-items: center !important;
+    justify-content: flex-end !important;
+
+    text-align: center !important;
+  }
+
+  .sign-space {
+    height: 10mm !important;
+    width: 75% !important;
+
+    border-bottom: 1px solid #111 !important;
+
+    margin: 0 auto 3px auto !important;
+  }
+}

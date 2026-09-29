@@ -1,0 +1,136 @@
+[
+  {
+    "examName": "HALF-YEARLY EXAMINATION 2026-27",
+    "session": "2026-27",
+    "date": "05-10-2026",
+    "day": "MONDAY",
+    "timing": "10:30 AM - 1:30 PM",
+    "subjects": {
+      "VI": "ODIA",
+      "VII": "COMPUTER SCIENCE",
+      "VIII": "ODIA",
+      "IX": "IT",
+      "X": "SCIENCE",
+      "XI (SCIENCE)": "CHEMISTRY",
+      "XI (COMMERCE)": "BUSINESS STUDIES",
+      "XII (SCIENCE)": "PHYSICS",
+      "XII (COMMERCE)": "ACCOUNTANCY"
+    }
+  },
+  {
+    "examName": "HALF-YEARLY EXAMINATION 2026-27",
+    "session": "2026-27",
+    "date": "06-10-2026",
+    "day": "TUESDAY",
+    "timing": "10:30 AM - 1:30 PM",
+    "subjects": {
+      "VI": "SCIENCE",
+      "VII": "ENGLISH",
+      "VIII": "ENGLISH",
+      "IX": "MATHS",
+      "X": "ENGLISH",
+      "XI (SCIENCE)": "IT/COMP SC.",
+      "XI (COMMERCE)": "IT/COMP SC.",
+      "XII (SCIENCE)": "PHYSICAL EDUCATION",
+      "XII (COMMERCE)": "PHYSICAL EDUCATION"
+    }
+  },
+  {
+    "examName": "HALF-YEARLY EXAMINATION 2026-27",
+    "session": "2026-27",
+    "date": "07-10-2026",
+    "day": "WEDNESDAY",
+    "timing": "10:30 AM - 1:30 PM",
+    "subjects": {
+      "VI": "HINDI/SANSKRIT",
+      "VII": "HINDI/SANSKRIT",
+      "VIII": "COMPUTER SCIENCE",
+      "IX": "SOCIAL SC.",
+      "X": "IT",
+      "XI (SCIENCE)": "ENGLISH",
+      "XI (COMMERCE)": "ENGLISH",
+      "XII (SCIENCE)": "CHEMISTRY",
+      "XII (COMMERCE)": "BUSINESS STUDIES"
+    }
+  },
+  {
+    "examName": "HALF-YEARLY EXAMINATION 2026-27",
+    "session": "2026-27",
+    "date": "08-10-2026",
+    "day": "THURSDAY",
+    "timing": "10:30 AM - 1:30 PM",
+    "subjects": {
+      "VI": "SOCIAL SC.",
+      "VII": "MATHS",
+      "VIII": "SOCIAL SC.",
+      "IX": "ODIA",
+      "X": "MATHS",
+      "XI (SCIENCE)": "MATHS",
+      "XI (COMMERCE)": "ACCOUNTANCY",
+      "XII (SCIENCE)": "ENGLISH",
+      "XII (COMMERCE)": "ENGLISH"
+    }
+  },
+  {
+    "examName": "HALF-YEARLY EXAMINATION 2026-27",
+    "session": "2026-27",
+    "date": "09-10-2026",
+    "day": "FRIDAY",
+    "timing": "10:30 AM - 1:30 PM",
+    "subjects": {
+      "VI": "MATHS",
+      "VII": "SOCIAL SC.",
+      "VIII": "SCIENCE",
+      "IX": "ENGLISH",
+      "X": "ODIA",
+      "XI (SCIENCE)": "PHYSICAL EDUCATION",
+      "XI (COMMERCE)": "PHYSICAL EDUCATION",
+      "XII (SCIENCE)": "PAINTING",
+      "XII (COMMERCE)": "PAINTING"
+    }
+  },
+  {
+    "examName": "HALF-YEARLY EXAMINATION 2026-27",
+    "session": "2026-27",
+    "date": "12-10-2026",
+    "day": "MONDAY",
+    "timing": "10:30 AM - 1:30 PM",
+    "subjects": {
+      "VI": "ENGLISH",
+      "VII": "SCIENCE",
+      "VIII": "MATHS",
+      "XI (SCIENCE)": "PHYSICS",
+      "XI (COMMERCE)": "ECONOMICS",
+      "XII (SCIENCE)": "BIOLOGY"
+    }
+  },
+  {
+    "examName": "HALF-YEARLY EXAMINATION 2026-27",
+    "session": "2026-27",
+    "date": "13-10-2026",
+    "day": "TUESDAY",
+    "timing": "10:30 AM - 1:30 PM",
+    "subjects": {
+      "VII": "ODIA",
+      "XI (SCIENCE)": "PAINTING",
+      "XI (COMMERCE)": "PAINTING",
+      "XII (SCIENCE)": "MATHS"
+    }
+  },
+  {
+    "examName": "HALF-YEARLY EXAMINATION 2026-27",
+    "session": "2026-27",
+    "date": "14-10-2026",
+    "day": "WEDNESDAY",
+    "timing": "10:30 AM - 1:30 PM",
+    "subjects": {
+      "VI": "COMPUTER SCIENCE",
+      "VIII": "HINDI/SANSKRIT",
+      "IX": "SCIENCE",
+      "X": "SOCIAL SC.",
+      "XI (SCIENCE)": "BIOLOGY",
+      "XII (SCIENCE)": "IT",
+      "XII (COMMERCE)": "IT"
+    }
+  }
+]

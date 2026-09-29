@@ -1,0 +1,6 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>OAV Sorada Admin</title><link rel="stylesheet" href="styles.css"></head>
+<body><main class="page-shell"><section class="hero"><div class="crest">OAV</div><div><div class="eyebrow">ODISHA ADARSHA VIDYALAYA, SORADA</div><h1>ADMIN DASHBOARD</h1><p>Student data management</p></div></section>
+<section class="card" id="loginCard"><h2>Admin Login</h2><form id="loginForm"><label>Username<input id="username" required value="admin"></label><label>Password<input id="password" type="password" required></label><button class="primary">Login</button></form><div id="loginMessage" class="message" hidden></div></section>
+<section class="card" id="adminPanel" hidden><div class="admin-head"><div><h2>Student Data</h2><p class="muted">Upload the school's Excel workbook. Only admit-card fields are imported.</p></div><button class="secondary" id="logout">Logout</button></div><form id="uploadForm"><input type="file" id="excelFile" accept=".xlsx,.xls" required><button class="primary">Import Excel</button></form><div id="uploadMessage" class="message" hidden></div><div id="stats" class="stats"></div></section>
+<script src="config.js"></script><script src="admin.js"></script></main></body></html>

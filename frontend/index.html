@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>OAV Sorada | Half-Yearly Admit Card 2026-27</title>
+    <link rel="icon" href="favicon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="card search-card no-print" id="searchCard">
+        <div class="portal-head">
+          <div class="portal-mark">OAV</div>
+          <div>
+            <div class="portal-school">ODISHA ADARSHA VIDYALAYA, SORADA</div>
+            <h1>HALF-YEARLY EXAMINATION 2026–27</h1>
+            <p>Admit Card Portal</p>
+          </div>
+        </div>
+        <h2>Download Admit Card</h2>
+        <p class="muted">
+          Enter the same details as recorded in the school register.
+        </p>
+        <form id="verifyForm">
+          <div class="grid four">
+            <label
+              >Class<select id="className" required>
+                <option value="">Select class</option>
+                <option>VI</option>
+                <option>VII</option>
+                <option>VIII</option>
+                <option>IX</option>
+                <option>X</option>
+                <option value="XI (SCIENCE)">XI (SCIENCE)</option>
+
+                <option value="XII (SCIENCE)">XII (SCIENCE)</option>
+              </select></label
+            >
+            <label
+              >Section<input
+                id="section"
+                maxlength="2"
+                placeholder="A"
+                required
+            /></label>
+            <label
+              >Roll No.<input
+                id="rollNo"
+                inputmode="numeric"
+                placeholder="1"
+                required
+            /></label>
+            <label>Date of Birth<input id="dob" type="date" required /></label>
+          </div>
+          <button class="primary" type="submit">View Admit Card</button>
+        </form>
+        <div id="message" class="message" hidden></div>
+      </section>
+      <section id="result" hidden>
+        <div class="toolbar no-print">
+          <button class="secondary" id="backBtn">
+            ← Search another student</button
+          ><button class="primary" id="printBtn">
+            Download / Print Admit Card
+          </button>
+        </div>
+        <article class="admit-card" id="admitCard">
+          <header class="admit-top">
+            <div class="school-heading">
+              <div class="school-title-row">
+                <img
+                  class="oav-logo"
+                  src="./OAV.jpg"
+                  alt="Odisha Adarsha Vidyalaya Logo"
+                />
+
+                <div class="school-title">
+                  <h1>ODISHA ADARSHA VIDYALAYA, SORADA</h1>
+                  <div class="exam-title">
+                    ADMIT CARD FOR HALF-YEARLY EXAMINATION 2026–27
+                  </div>
+                  <div class="exam-time">TIME: 10:30 AM - 1:30 PM</div>
+                </div>
+
+                <img class="cbse-logo" src="./CBSE.svg" alt="CBSE Logo" />
+              </div>
+
+              
+          </header>
+
+          <div class="top-details">
+            <div><b>CLASS:</b> <span id="outClass"></span></div>
+            <div><b>SECTION:</b> <span id="outSection"></span></div>
+            <div><b>ROLL NO.:</b> <span id="outRoll"></span></div>
+            <div><b>DATE OF BIRTH:</b> <span id="outDob"></span></div>
+          </div>
+
+          <section class="candidate-block">
+            <div class="photo-box">
+              <span
+                >PASTE YOUR<br />
+                PASSPORT SIZE<br />
+                PHOTO HERE</span
+              >
+            </div>
+            <div class="candidate-details">
+              <div>
+                <span>Student's Name</span><strong id="outName"></strong>
+              </div>
+              <div>
+                <span>Father/Guardian's Name</span
+                ><strong id="outFather"></strong>
+              </div>
+              <div>
+                <span>Mother's Name</span><strong id="outMother"></strong>
+              </div>
+              <div><span>Gender</span><strong id="outGender"></strong></div>
+              <div>
+                <span>School</span
+                ><strong>ODISHA ADARSHA VIDYALAYA, SORADA</strong>
+              </div>
+            </div>
+          </section>
+
+          <section class="schedule">
+            <div class="section-title">EXAMINATION SCHEDULE</div>
+            <table>
+              <thead>
+                <tr>
+                  <th>DATE</th>
+                  <th>DAY</th>
+                  <th>SUBJECT</th>
+                </tr>
+              </thead>
+              <tbody id="scheduleBody"></tbody>
+            </table>
+          </section>
+
+          <section class="instructions">
+            <div class="section-title">
+              IMPORTANT INSTRUCTIONS TO BE STRICTLY COMPLIED WITH -
+            </div>
+            <ol>
+              <li>
+                Please confirm the correctness of all details and subjects(s)
+                mentioned in the Admit Card.
+              </li>
+              <li>
+                Students must report to the examination room before the
+                scheduled commencement of the examination.
+              </li>
+              <li>
+                All the students should carry only Blue/Royal Blue
+                ballpoint/Gel/Fountain Pen, Pencil, Eraser, Scale, Sharpener,
+                Geometry Instrument, Admit Card & Identity Card of the school.
+              </li>
+              <li>
+                Mobile phones, smart watches and other communication/electronic
+                devices are not allowed inside the examination room. If found in
+                a student's possession, strict disciplinary action will be taken
+                against the student.
+              </li>
+              <li>
+                All students are strictly warned not to indulge in any form of
+                cheating or unfair means during the examination. If found
+                involved in cheating or malpractice, strict disciplinary action
+                will be taken as per the examination rules.
+              </li>
+              <li>
+                Follow the instructions given by the invigilator and maintain
+                discipline during the examination.
+              </li>
+
+              <li>
+                No student shall leave the examination room without permission
+                of the invigilator.
+              </li>
+            </ol>
+          </section>
+
+          <div class="confirmation">
+            ALL PARTICULARS INCLUDING THE SUBJECT(S) AND THE PHOTO SHOULD BE
+            CHECKED AND FOUND CORRECT
+          </div>
+          <footer class="signatures">
+
+  <!-- ROW 1 - STUDENT / PARENT -->
+
+  <div class="signature-box">
+    <div class="sign-space"></div>
+    <strong>
+      Full Signature of the Student (In running hand only)
+    </strong>
+  </div>
+
+  <div class="signature-box">
+    <div class="sign-space"></div>
+    <strong>
+      Signature of Father/Mother/Guardian
+    </strong>
+  </div>
+
+
+  <!-- ROW 2 - OFFICIAL SIGNATURES -->
+
+  <div class="signature-box">
+    <div class="sign-space"></div>
+    <strong>
+      Examination In-Charge, OAV Sorada
+    </strong>
+  </div>
+
+  <div class="signature-box">
+    <div class="sign-space"></div>
+    <strong>
+      Principal, OAV Sorada
+    </strong>
+  </div>
+
+</footer>
+        </article>
+      </section>
+    </main>
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
