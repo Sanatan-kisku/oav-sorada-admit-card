@@ -10,29 +10,29 @@ const upload = multer({ storage: multer.memoryStorage(), limits: { fileSize: 5 *
 const clean = (v) => String(v ?? '').trim();
 const normalizeDob = (value) => {
   if (value instanceof Date && !Number.isNaN(value.getTime())) {
-    return `${String(value.getDate()).padStart(2,'0')}-${String(value.getMonth()+1).padStart(2,'0')}-${value.getFullYear()}`;
+    return `${String(value.getDate()).padStart(2, '0')}-${String(value.getMonth() + 1).padStart(2, '0')}-${value.getFullYear()}`;
   }
   let s = clean(value).replace(/\//g, '-').replace(/\./g, '-');
   const parts = s.split('-').filter(Boolean);
   if (parts.length === 3) {
-    if (parts[0].length === 4) return `${parts[2].padStart(2,'0')}-${parts[1].padStart(2,'0')}-${parts[0]}`;
-    return `${parts[0].padStart(2,'0')}-${parts[1].padStart(2,'0')}-${parts[2].length === 2 ? `20${parts[2]}` : parts[2]}`;
+    if (parts[0].length === 4) return `${parts[2].padStart(2, '0')}-${parts[1].padStart(2, '0')}-${parts[0]}`;
+    return `${parts[0].padStart(2, '0')}-${parts[1].padStart(2, '0')}-${parts[2].length === 2 ? `20${parts[2]}` : parts[2]}`;
   }
   return s;
 };
 
 function mapRow(row) {
   return {
-    admissionNo: clean(row['Adm No']),
-    name: clean(row['Name']),
-    className: clean(row['Class']),
-    section: clean(row['Section']).toUpperCase(),
-    rollNo: clean(row['Roll']),
-    gender: clean(row['Gender']),
-    dob: normalizeDob(row['Date of Birth']),
-    fatherName: clean(row['Father']),
-    motherName: clean(row['Mother']),
-    houseName: clean(row['House Name'])
+    admissionNo: clean(row['ADMISSION_NO'] || row['Adm No']),
+    name: clean(row['STUDENT_NAME'] || row['Name']),
+    className: clean(row['CLASS_NAME'] || row['Class']),
+    section: clean(row['SECTION_NAME'] || row['Section']).toUpperCase(),
+    rollNo: clean(row['ROLL_NO'] || row['Roll']),
+    gender: clean(row['GENDER'] || row['Gender']),
+    dob: normalizeDob(row['BIRTH_DATE'] || row['Date of Birth']),
+    fatherName: clean(row['FATHER'] || row['Father']),
+    motherName: clean(row['MOTHER'] || row['Mother']),
+    houseName: clean(row['HOUSE_NAME'] || row['House Name'])
   };
 }
 
