@@ -2,70 +2,468 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+
     <title>OAV Sorada | Half-Yearly Admit Card 2026-27</title>
+
     <link rel="icon" href="favicon.svg" />
     <link rel="stylesheet" href="styles.css" />
+
+    <!-- Mobile-first improvements for the portal/search page -->
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        min-height: 100%;
+        overflow-x: hidden;
+      }
+
+      body {
+        -webkit-text-size-adjust: 100%;
+      }
+
+      .page-shell {
+        width: 100%;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      /* ================================
+         SEARCH / HOME PAGE
+         ================================ */
+
+      .search-card {
+        width: 100%;
+        max-width: 760px;
+        margin: 0 auto;
+      }
+
+      .portal-head {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .portal-mark {
+        flex: 0 0 auto;
+      }
+
+      .portal-school {
+        line-height: 1.25;
+      }
+
+      .portal-head h1 {
+        line-height: 1.25;
+        margin: 4px 0;
+      }
+
+      .portal-head p {
+        margin: 0;
+      }
+
+      .search-card h2 {
+        margin-top: 28px;
+        margin-bottom: 8px;
+      }
+
+      .search-card .muted {
+        margin-bottom: 22px;
+      }
+
+      /* Form */
+
+      #verifyForm {
+        width: 100%;
+      }
+
+      #verifyForm .grid.four {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
+        width: 100%;
+      }
+
+      #verifyForm label {
+        display: block;
+        min-width: 0;
+        font-weight: 600;
+        line-height: 1.35;
+      }
+
+      #verifyForm select,
+      #verifyForm input {
+        display: block;
+        width: 100%;
+        min-width: 0;
+        height: 50px;
+        margin-top: 7px;
+        padding: 0 13px;
+        border-radius: 10px;
+        font-size: 16px;
+        font-family: inherit;
+      }
+
+      #verifyForm select {
+        background-color: #fff;
+        cursor: pointer;
+      }
+
+      #verifyForm input:focus,
+      #verifyForm select:focus {
+        outline: none;
+      }
+
+      #verifyForm .primary {
+        width: 100%;
+        min-height: 52px;
+        margin-top: 20px;
+        font-size: 16px;
+        font-weight: 700;
+        border-radius: 10px;
+      }
+
+      /* ================================
+         TABLET
+         ================================ */
+
+      @media (max-width: 850px) {
+        .page-shell {
+          padding: 16px;
+        }
+
+        #verifyForm .grid.four {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      /* ================================
+         MOBILE
+         ================================ */
+
+      @media (max-width: 600px) {
+        .page-shell {
+          padding: 10px;
+        }
+
+        .search-card {
+          width: 100%;
+          margin: 0;
+          border-radius: 14px;
+        }
+
+        .portal-head {
+          gap: 11px;
+          align-items: center;
+        }
+
+        .portal-mark {
+          min-width: 48px;
+          width: 48px;
+          height: 48px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 15px;
+        }
+
+        .portal-school {
+          font-size: 13px;
+          line-height: 1.25;
+        }
+
+        .portal-head h1 {
+          font-size: 17px;
+          line-height: 1.25;
+          margin: 3px 0;
+        }
+
+        .portal-head p {
+          font-size: 12px;
+        }
+
+        .search-card h2 {
+          font-size: 21px;
+          margin-top: 22px;
+          margin-bottom: 6px;
+        }
+
+        .search-card .muted {
+          font-size: 13px;
+          line-height: 1.45;
+          margin-bottom: 18px;
+        }
+
+        /*
+          One field per row on mobile.
+          This makes the form much easier to use
+          on a phone.
+        */
+        #verifyForm .grid.four {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 14px;
+        }
+
+        #verifyForm label {
+          font-size: 14px;
+        }
+
+        #verifyForm select,
+        #verifyForm input {
+          height: 50px;
+          min-height: 50px;
+          margin-top: 6px;
+          padding: 0 13px;
+          font-size: 16px;
+          border-radius: 10px;
+        }
+
+        #verifyForm .primary {
+          min-height: 52px;
+          margin-top: 18px;
+          font-size: 16px;
+        }
+
+        .message {
+          font-size: 13px;
+          line-height: 1.45;
+        }
+      }
+
+      /* ================================
+         VERY SMALL PHONES
+         ================================ */
+
+      @media (max-width: 360px) {
+        .page-shell {
+          padding: 7px;
+        }
+
+        .search-card {
+          padding: 14px;
+        }
+
+        .portal-head {
+          gap: 9px;
+        }
+
+        .portal-mark {
+          width: 43px;
+          min-width: 43px;
+          height: 43px;
+          font-size: 13px;
+        }
+
+        .portal-school {
+          font-size: 11px;
+        }
+
+        .portal-head h1 {
+          font-size: 15px;
+        }
+
+        .portal-head p {
+          font-size: 11px;
+        }
+
+        .search-card h2 {
+          font-size: 19px;
+        }
+
+        #verifyForm select,
+        #verifyForm input {
+          height: 48px;
+          min-height: 48px;
+        }
+      }
+
+      /* ================================
+         ADMIT CARD MOBILE SAFETY
+         ================================ */
+
+      @media screen and (max-width: 600px) {
+        #result {
+          width: 100%;
+          overflow-x: hidden;
+        }
+
+        .toolbar {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 9px;
+        }
+
+        .toolbar button {
+          width: 100%;
+          min-height: 48px;
+        }
+
+        /*
+          The actual admit card is an A4 document.
+          It is allowed to be wider than the phone only
+          when printing, while the screen remains usable.
+        */
+        .admit-card {
+          max-width: 100%;
+          overflow-x: auto;
+        }
+      }
+
+      /* ================================
+         PRINT
+         ================================ */
+
+      @media print {
+        .page-shell {
+          padding: 0;
+        }
+
+        .search-card,
+        .toolbar {
+          display: none !important;
+        }
+
+        #result {
+          display: block !important;
+        }
+      }
+    </style>
   </head>
+
   <body>
     <main class="page-shell">
+      <!-- =====================================================
+           HOME / STUDENT SEARCH PAGE
+           ===================================================== -->
+
       <section class="card search-card no-print" id="searchCard">
         <div class="portal-head">
           <div class="portal-mark">OAV</div>
+
           <div>
             <div class="portal-school">ODISHA ADARSHA VIDYALAYA, SORADA</div>
+
             <h1>HALF-YEARLY EXAMINATION 2026–27</h1>
+
             <p>Admit Card Portal</p>
           </div>
         </div>
+
         <h2>Download Admit Card</h2>
+
         <p class="muted">
           Enter the same details as recorded in the school register.
         </p>
+
+        <!-- ================= FORM ================= -->
+
         <form id="verifyForm">
           <div class="grid four">
-            <label
-              >Class<select id="className" required>
-                <option value="">Select class</option>
-                <option>VI</option>
-                <option>VII</option>
-                <option>VIII</option>
-                <option>IX</option>
-                <option>X</option>
+            <!-- CLASS -->
+
+            <label for="className">
+              Class
+
+              <select id="className" required>
+                <option value="" selected disabled>Select class</option>
+
+                <option value="VI">VI</option>
+
+                <option value="VII">VII</option>
+
+                <option value="VIII">VIII</option>
+
+                <option value="IX">IX</option>
+
+                <option value="X">X</option>
+
                 <option value="XI (SCIENCE)">XI (SCIENCE)</option>
 
+                <option value="XI (COMMERCE)">XI (COMMERCE)</option>
+
                 <option value="XII (SCIENCE)">XII (SCIENCE)</option>
-              </select></label
-            >
-            <label
-              >Section<input
-                id="section"
-                maxlength="2"
-                placeholder="A"
-                required
-            /></label>
-            <label
-              >Roll No.<input
+
+                <option value="XII (COMMERCE)">XII (COMMERCE)</option>
+              </select>
+            </label>
+
+            <!-- SECTION -->
+
+            <label for="section">
+              Section
+
+              <select id="section" required>
+                <option value="" selected disabled>Select section</option>
+
+                <option value="A">A</option>
+
+                <option value="B">B</option>
+              </select>
+            </label>
+
+            <!-- ROLL NUMBER -->
+
+            <label for="rollNo">
+              Roll No.
+
+              <input
                 id="rollNo"
                 inputmode="numeric"
-                placeholder="1"
+                autocomplete="off"
                 required
-            /></label>
-            <label>Date of Birth<input id="dob" type="date" required /></label>
+              />
+            </label>
+
+            <!-- DATE OF BIRTH -->
+
+            <label for="dob">
+              Date of Birth
+
+              <input id="dob" type="date" autocomplete="bday" required />
+            </label>
           </div>
+
+          <!-- SUBMIT -->
+
           <button class="primary" type="submit">View Admit Card</button>
         </form>
-        <div id="message" class="message" hidden></div>
+
+        <div id="message" class="message" hidden aria-live="polite"></div>
       </section>
+
+      <!-- =====================================================
+           ADMIT CARD RESULT
+           ===================================================== -->
+
       <section id="result" hidden>
         <div class="toolbar no-print">
-          <button class="secondary" id="backBtn">
-            ← Search another student</button
-          ><button class="primary" id="printBtn">
+          <button class="secondary" id="backBtn" type="button">
+            ← Search another student
+          </button>
+
+          <button class="primary" id="printBtn" type="button">
             Download / Print Admit Card
           </button>
         </div>
+
+        <!-- ===================================================
+             A4 ADMIT CARD
+             =================================================== -->
+
         <article class="admit-card" id="admitCard">
+          <!-- HEADER -->
+
           <header class="admit-top">
             <div class="school-heading">
               <div class="school-title-row">
@@ -77,54 +475,87 @@
 
                 <div class="school-title">
                   <h1>ODISHA ADARSHA VIDYALAYA, SORADA</h1>
+
                   <div class="exam-title">
                     ADMIT CARD FOR HALF-YEARLY EXAMINATION 2026–27
                   </div>
+
                   <div class="exam-time">TIME: 10:30 AM - 1:30 PM</div>
                 </div>
 
                 <img class="cbse-logo" src="./CBSE.svg" alt="CBSE Logo" />
               </div>
-
-              
+            </div>
           </header>
 
+          <!-- STUDENT BASIC DETAILS -->
+
           <div class="top-details">
-            <div><b>CLASS:</b> <span id="outClass"></span></div>
-            <div><b>SECTION:</b> <span id="outSection"></span></div>
-            <div><b>ROLL NO.:</b> <span id="outRoll"></span></div>
-            <div><b>DATE OF BIRTH:</b> <span id="outDob"></span></div>
+            <div>
+              <b>CLASS:</b>
+              <span id="outClass"></span>
+            </div>
+
+            <div>
+              <b>SECTION:</b>
+              <span id="outSection"></span>
+            </div>
+
+            <div>
+              <b>ROLL NO.:</b>
+              <span id="outRoll"></span>
+            </div>
+
+            <div>
+              <b>DATE OF BIRTH:</b>
+              <span id="outDob"></span>
+            </div>
           </div>
+
+          <!-- CANDIDATE DETAILS -->
 
           <section class="candidate-block">
             <div class="photo-box">
-              <span
-                >PASTE YOUR<br />
+              <span>
+                PASTE YOUR<br />
                 PASSPORT SIZE<br />
-                PHOTO HERE</span
-              >
+                PHOTO HERE
+              </span>
             </div>
+
             <div class="candidate-details">
               <div>
-                <span>Student's Name</span><strong id="outName"></strong>
+                <span>Student's Name</span>
+                <strong id="outName"></strong>
               </div>
+
               <div>
-                <span>Father/Guardian's Name</span
-                ><strong id="outFather"></strong>
+                <span>Father/Guardian's Name</span>
+                <strong id="outFather"></strong>
               </div>
+
               <div>
-                <span>Mother's Name</span><strong id="outMother"></strong>
+                <span>Mother's Name</span>
+                <strong id="outMother"></strong>
               </div>
-              <div><span>Gender</span><strong id="outGender"></strong></div>
+
               <div>
-                <span>School</span
-                ><strong>ODISHA ADARSHA VIDYALAYA, SORADA</strong>
+                <span>Gender</span>
+                <strong id="outGender"></strong>
+              </div>
+
+              <div>
+                <span>School</span>
+                <strong> ODISHA ADARSHA VIDYALAYA, SORADA </strong>
               </div>
             </div>
           </section>
 
+          <!-- EXAMINATION SCHEDULE -->
+
           <section class="schedule">
             <div class="section-title">EXAMINATION SCHEDULE</div>
+
             <table>
               <thead>
                 <tr>
@@ -133,40 +564,49 @@
                   <th>SUBJECT</th>
                 </tr>
               </thead>
+
               <tbody id="scheduleBody"></tbody>
             </table>
           </section>
+
+          <!-- INSTRUCTIONS -->
 
           <section class="instructions">
             <div class="section-title">
               IMPORTANT INSTRUCTIONS TO BE STRICTLY COMPLIED WITH -
             </div>
+
             <ol>
               <li>
                 Please confirm the correctness of all details and subjects(s)
                 mentioned in the Admit Card.
               </li>
+
               <li>
                 Students must report to the examination room before the
                 scheduled commencement of the examination.
               </li>
+
               <li>
                 All the students should carry only Blue/Royal Blue
                 ballpoint/Gel/Fountain Pen, Pencil, Eraser, Scale, Sharpener,
                 Geometry Instrument, Admit Card & Identity Card of the school.
               </li>
+
               <li>
                 Mobile phones, smart watches and other communication/electronic
                 devices are not allowed inside the examination room. If found in
                 a student's possession, strict disciplinary action will be taken
                 against the student.
               </li>
+
               <li>
                 All students are strictly warned not to indulge in any form of
                 cheating or unfair means during the examination. If found
                 involved in cheating or malpractice, strict disciplinary action
                 will be taken as per the examination rules.
               </li>
+
               <li>
                 Follow the instructions given by the invigilator and maintain
                 discipline during the examination.
@@ -179,55 +619,63 @@
             </ol>
           </section>
 
+          <!-- CONFIRMATION -->
+
           <div class="confirmation">
             ALL PARTICULARS INCLUDING THE SUBJECT(S) AND THE PHOTO SHOULD BE
             CHECKED AND FOUND CORRECT
           </div>
+
+          <!-- SIGNATURES -->
+
           <footer class="signatures">
+            <!-- STUDENT SIGNATURE -->
 
-  <!-- ROW 1 - STUDENT / PARENT -->
+            <div class="signature-box">
+              <div class="sign-space"></div>
 
-  <div class="signature-box">
-    <div class="sign-space"></div>
-    <strong>
-      Full Signature of the Student (In running hand only)
-    </strong>
-  </div>
+              <strong>
+                Full Signature of the Student (In running hand only)
+              </strong>
+            </div>
 
-  <div class="signature-box">
-    <div class="sign-space"></div>
-    <strong>
-      Signature of Father/Mother/Guardian
-    </strong>
-  </div>
+            <!-- PARENT SIGNATURE -->
 
+            <div class="signature-box">
+              <div class="sign-space"></div>
 
-  <!-- ROW 2 - OFFICIAL SIGNATURES -->
+              <strong> Signature of Father/Mother/Guardian </strong>
+            </div>
 
-  <div class="signature-box official-signature">
-  <div class="sign-image-space">
-    <img
-      src="./ExamInchargeSignature.jpg"
-      alt="Examination In-Charge Signature"
-    />
-  </div>
-  <strong>Examination In-Charge, OAV Sorada</strong>
-</div>
+            <!-- EXAMINATION IN-CHARGE SIGNATURE -->
 
-<div class="signature-box official-signature">
-  <div class="sign-image-space">
-    <img
-      src="./PrincipalSignature.jpg"
-      alt="Principal Signature"
-    />
-  </div>
-  <strong>Principal, OAV Sorada</strong>
-</div>
+            <div class="signature-box official-signature">
+              <div class="sign-image-space">
+                <img
+                  src="./ExamInchargeSignature.jpg"
+                  alt="Examination In-Charge Signature"
+                />
+              </div>
 
-</footer>
+              <strong> Examination In-Charge, OAV Sorada </strong>
+            </div>
+
+            <!-- PRINCIPAL SIGNATURE -->
+
+            <div class="signature-box official-signature">
+              <div class="sign-image-space">
+                <img src="./PrincipalSignature.jpg" alt="Principal Signature" />
+              </div>
+
+              <strong> Principal, OAV Sorada </strong>
+            </div>
+          </footer>
         </article>
       </section>
     </main>
+
+    <!-- APPLICATION SCRIPT -->
+
     <script src="app.js"></script>
   </body>
 </html>
