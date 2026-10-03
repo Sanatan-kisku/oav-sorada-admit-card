@@ -880,3 +880,474 @@ form .primary {
   display: block;
   line-height: 1.2;
 }
+
+/* =========================================================
+   MOBILE ADMIT CARD
+   Screen only - does NOT change A4 printing
+   ========================================================= */
+
+@media screen and (max-width: 600px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden !important;
+  }
+
+  .page-shell {
+    width: 100%;
+    max-width: 100%;
+    padding: 8px !important;
+    margin: 0 !important;
+  }
+
+  /* -----------------------------------------
+     RESULT AREA
+     ----------------------------------------- */
+
+  #result {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden !important;
+  }
+
+  /* -----------------------------------------
+     TOP BUTTONS
+     ----------------------------------------- */
+
+  .toolbar {
+    width: 100%;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .toolbar button {
+    width: 100% !important;
+    min-height: 48px !important;
+    margin: 0 !important;
+    font-size: 15px !important;
+  }
+
+  /* -----------------------------------------
+     ADMIT CARD
+     ----------------------------------------- */
+
+  .admit-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+
+    margin: 0 auto !important;
+
+    padding: 10px !important;
+
+    box-sizing: border-box !important;
+
+    overflow: hidden !important;
+
+    font-size: 11px;
+  }
+
+  /* -----------------------------------------
+     SCHOOL HEADER
+     ----------------------------------------- */
+
+  .admit-top {
+    width: 100% !important;
+  }
+
+  .school-heading {
+    width: 100% !important;
+  }
+
+  .school-title-row {
+    width: 100% !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+
+    gap: 6px !important;
+  }
+
+  .oav-logo {
+    width: 48px !important;
+    height: 48px !important;
+
+    flex: 0 0 48px !important;
+
+    object-fit: contain !important;
+  }
+
+  .cbse-logo {
+    width: 45px !important;
+    height: 45px !important;
+
+    flex: 0 0 45px !important;
+
+    object-fit: contain !important;
+  }
+
+  .school-title {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+
+    text-align: center !important;
+  }
+
+  .school-title h1 {
+    margin: 0 !important;
+
+    font-size: 14px !important;
+    line-height: 1.15 !important;
+
+    word-break: normal !important;
+  }
+
+  .exam-title {
+    margin-top: 5px !important;
+
+    font-size: 10px !important;
+    line-height: 1.2 !important;
+  }
+
+  .exam-time {
+    margin-top: 4px !important;
+
+    font-size: 10px !important;
+    line-height: 1.2 !important;
+  }
+
+  /* -----------------------------------------
+     CLASS / SECTION / ROLL / DOB
+     ----------------------------------------- */
+
+  .top-details {
+    width: 100% !important;
+
+    display: grid !important;
+
+    grid-template-columns: 1fr 1fr !important;
+
+    gap: 0 !important;
+
+    margin-top: 7px !important;
+  }
+
+  .top-details > div {
+    min-width: 0 !important;
+
+    padding: 7px 6px !important;
+
+    font-size: 10px !important;
+
+    line-height: 1.25 !important;
+
+    overflow-wrap: anywhere !important;
+  }
+
+  /* -----------------------------------------
+     STUDENT / PHOTO SECTION
+     ----------------------------------------- */
+
+  .candidate-block {
+    width: 100% !important;
+
+    display: grid !important;
+
+    grid-template-columns: 32% 68% !important;
+
+    min-width: 0 !important;
+  }
+
+  .photo-box {
+    width: 100% !important;
+
+    min-width: 0 !important;
+
+    min-height: 180px !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    text-align: center !important;
+
+    padding: 5px !important;
+
+    box-sizing: border-box !important;
+  }
+
+  .photo-box span {
+    font-size: 9px !important;
+
+    line-height: 1.25 !important;
+  }
+
+  .candidate-details {
+    width: 100% !important;
+
+    min-width: 0 !important;
+  }
+
+  .candidate-details > div {
+    min-width: 0 !important;
+
+    display: grid !important;
+
+    grid-template-columns: 55% 45% !important;
+
+    min-height: 34px !important;
+  }
+
+  .candidate-details span,
+  .candidate-details strong {
+    min-width: 0 !important;
+
+    padding: 6px 5px !important;
+
+    font-size: 9px !important;
+
+    line-height: 1.2 !important;
+
+    overflow-wrap: anywhere !important;
+
+    word-break: normal !important;
+  }
+
+  /* -----------------------------------------
+     EXAMINATION SCHEDULE
+     ----------------------------------------- */
+
+  .schedule {
+    width: 100% !important;
+
+    margin-top: 8px !important;
+
+    overflow: hidden !important;
+  }
+
+  .section-title {
+    font-size: 10px !important;
+
+    line-height: 1.25 !important;
+
+    padding: 6px !important;
+  }
+
+  .schedule table {
+    width: 100% !important;
+
+    min-width: 0 !important;
+
+    table-layout: fixed !important;
+
+    border-collapse: collapse !important;
+  }
+
+  .schedule th,
+  .schedule td {
+    padding: 6px 3px !important;
+
+    font-size: 9px !important;
+
+    line-height: 1.25 !important;
+
+    overflow-wrap: anywhere !important;
+  }
+
+  .schedule th:nth-child(1),
+  .schedule td:nth-child(1) {
+    width: 29% !important;
+  }
+
+  .schedule th:nth-child(2),
+  .schedule td:nth-child(2) {
+    width: 25% !important;
+  }
+
+  .schedule th:nth-child(3),
+  .schedule td:nth-child(3) {
+    width: 46% !important;
+  }
+
+  /* -----------------------------------------
+     INSTRUCTIONS
+     ----------------------------------------- */
+
+  .instructions {
+    width: 100% !important;
+
+    margin-top: 8px !important;
+  }
+
+  .instructions ol {
+    margin: 5px 0 5px 18px !important;
+
+    padding: 0 !important;
+  }
+
+  .instructions li {
+    font-size: 8.5px !important;
+
+    line-height: 1.3 !important;
+
+    margin-bottom: 4px !important;
+
+    overflow-wrap: anywhere !important;
+  }
+
+  /* -----------------------------------------
+     CONFIRMATION
+     ----------------------------------------- */
+
+  .confirmation {
+    width: 100% !important;
+
+    padding: 7px !important;
+
+    font-size: 8.5px !important;
+
+    line-height: 1.25 !important;
+
+    text-align: center !important;
+
+    box-sizing: border-box !important;
+  }
+
+  /* -----------------------------------------
+     SIGNATURES
+     ----------------------------------------- */
+
+  .signatures {
+    width: 100% !important;
+
+    display: grid !important;
+
+    grid-template-columns: 1fr 1fr !important;
+
+    column-gap: 8px !important;
+
+    row-gap: 10px !important;
+
+    margin-top: 10px !important;
+
+    font-size: 8px !important;
+  }
+
+  .signature-box {
+    width: 100% !important;
+
+    min-width: 0 !important;
+
+    text-align: center !important;
+  }
+
+  .sign-space {
+    width: 80% !important;
+
+    height: 9mm !important;
+
+    margin: 0 auto 3px auto !important;
+  }
+
+  .sign-image-space {
+    width: 80% !important;
+
+    height: 9mm !important;
+
+    margin: 0 auto 3px auto !important;
+
+    display: flex !important;
+
+    align-items: flex-end !important;
+
+    justify-content: center !important;
+  }
+
+  .sign-image-space img {
+    max-width: 100% !important;
+
+    max-height: 9mm !important;
+
+    width: auto !important;
+
+    height: auto !important;
+
+    object-fit: contain !important;
+  }
+
+  .signature-box strong {
+    font-size: 8px !important;
+
+    line-height: 1.2 !important;
+  }
+}
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media screen and (max-width: 380px) {
+  .page-shell {
+    padding: 5px !important;
+  }
+
+  .admit-card {
+    padding: 7px !important;
+  }
+
+  .oav-logo {
+    width: 42px !important;
+    height: 42px !important;
+
+    flex-basis: 42px !important;
+  }
+
+  .cbse-logo {
+    width: 40px !important;
+    height: 40px !important;
+
+    flex-basis: 40px !important;
+  }
+
+  .school-title h1 {
+    font-size: 12px !important;
+  }
+
+  .exam-title,
+  .exam-time {
+    font-size: 9px !important;
+  }
+
+  .candidate-block {
+    grid-template-columns: 30% 70% !important;
+  }
+
+  .candidate-details > div {
+    grid-template-columns: 52% 48% !important;
+  }
+
+  .candidate-details span,
+  .candidate-details strong {
+    font-size: 8px !important;
+  }
+
+  .schedule th,
+  .schedule td {
+    font-size: 8px !important;
+    padding: 5px 2px !important;
+  }
+
+  .instructions li {
+    font-size: 8px !important;
+  }
+
+  .signature-box strong {
+    font-size: 7px !important;
+  }
+}
