@@ -427,10 +427,21 @@
 
             <!-- DATE OF BIRTH -->
 
-            <label for="dob">
-              Date of Birth
+            <!-- DATE OF BIRTH -->
 
-              <input id="dob" type="date" autocomplete="bday" required />
+            <label for="dob">
+              Date of Birth (DD-MM-YYYY)
+
+              <input
+                id="dob"
+                type="text"
+                inputmode="numeric"
+                autocomplete="bday"
+                maxlength="10"
+                pattern="(0[1-9]|[12][0-9]|3[01])-(0[1-9]|1[0-2])-[0-9]{4}"
+                title="Enter date of birth in DD-MM-YYYY format, e.g. 05-08-2012"
+                required
+              />
             </label>
           </div>
 
