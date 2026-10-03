@@ -858,3 +858,25 @@ form .primary {
     margin: 0 auto 3px auto !important;
   }
 }
+.sign-image-space {
+  height: 10mm;
+  width: 75%;
+  margin: 0 auto 3px auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.sign-image-space img {
+  display: block;
+  max-width: 100%;
+  max-height: 10mm;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.official-signature strong {
+  display: block;
+  line-height: 1.2;
+}
